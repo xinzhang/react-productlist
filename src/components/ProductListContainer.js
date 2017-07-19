@@ -51,7 +51,9 @@ class ProductListContainer extends React.Component {
       })
     }
 
-    updateItemsPerPage(itemsPerPage) {
+    updateItemsPerPage(e) {
+      console.log(e);
+      let itemsPerPage = e.target.value;
       let pagedArray = this.props.products.slice(0, itemsPerPage);
       this.setState({
         itemsPerPage,
@@ -65,7 +67,7 @@ class ProductListContainer extends React.Component {
         <div className="row">
           <div>
             <TotalProducts total={this.props.products.length} />
-            <ItemsPerPage test={3} itemsPerPageList={this.props.itemsPerPageList} updateItemsPerPage={this.updateItemsPerPage} />
+            <ItemsPerPage updateItemsPerPage={this.updateItemsPerPage} />
           </div>
         </div>
         <div className="row">
@@ -83,15 +85,13 @@ class ProductListContainer extends React.Component {
 }
 
 ProductListContainer.propTypes = {
-  products: PropTypes.array.isRequired,
-  itemsPerPageList: PropTypes.array.isRequired
+  products: PropTypes.array.isRequired
 }
 
 function mapStateToProps(state, ownProps) {
   console.log(state);
   return {
-    products: state.products,
-    itemsPerPageList: state.itemsPerPageList
+    products: state.products
   }
 }
 

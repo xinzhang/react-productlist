@@ -1,4 +1,5 @@
 import React from 'react';
+import config from '../config/config';
 
 const ItemsPerPage = (props) => {
   console.log(props);
@@ -11,7 +12,11 @@ const ItemsPerPage = (props) => {
             )
           })}
       </select>
-  
+
 )}
+
+ItemsPerPage.defaultProps = {
+  itemsPerPageList: config.itemsPerPageList,
+}
 
 export default ItemsPerPage
