@@ -1,3 +1,34 @@
-.body {
-  background-color: #ccc
+.navbar a {
+  text-decoration: none;
+}
+
+.paddingtop10 {
+  padding-top: 10px
+}
+
+.thumbnail-size {
+  height: 200px;
+  width:192px;
+}
+
+.thumbnail .caption {
+  height: 130px;
+}
+
+.pagination a {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 2px;
+}
+
+.pagination .currentPage {
+  border-bottom : 2px solid #000;
+  background-color: #fff;
+  margin-left:10px;
+  margin-right: 10px;
+  padding: 2px;
+}
+
+.pagination .grayout {
+  color:lightgray;
 }

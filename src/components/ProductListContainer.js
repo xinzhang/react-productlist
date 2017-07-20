@@ -65,19 +65,22 @@ class ProductListContainer extends React.Component {
       return (
         <div className="container">
         <div className="row">
-          <div>
             <TotalProducts total={this.props.products.length} />
             <ItemsPerPage updateItemsPerPage={this.updateItemsPerPage} />
-          </div>
+        </div>
+        <div classnName="row">
+            <hr />
         </div>
         <div className="row">
-          <div className="grid-list-wrapper">
+          <div>
             <ProductList products={this.state.products} />
           </div>
-          <ProductPager
-            currentPage={this.state.currentPage}
-            totalPage={this.state.totalPage}
-            pageNavigation={this.pagination}/>
+          <div className="pull-right">
+            <ProductPager
+              currentPage={this.state.currentPage}
+              totalPage={this.state.totalPage}
+              pageNavigation={this.pagination}/>
+          </div>
         </div>
       </div>
       );
