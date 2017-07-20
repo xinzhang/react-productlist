@@ -54,10 +54,13 @@ class ProductListContainer extends React.Component {
     updateItemsPerPage(e) {
       console.log(e);
       let itemsPerPage = e.target.value;
+      let totalPage = parseInt(this.props.products.length / itemsPerPage) + 1;
       let pagedArray = this.props.products.slice(0, itemsPerPage);
       this.setState({
         itemsPerPage,
-        products: pagedArray
+        products: pagedArray,
+        currentPage: 1,
+        totalPage: totalPage
       })
     }
 

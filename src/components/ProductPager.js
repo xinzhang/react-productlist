@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default class RequestTablePager extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render(){
 
