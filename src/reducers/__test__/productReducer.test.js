@@ -6,44 +6,19 @@ describe('product list reducer', () => {
     expect(reducer(undefined, {})).toEqual([])
   })
 
-  it('should handle ADD_TODO', () => {
+  it('should load products', () => {
     expect(
       reducer([], {
-        type: types.ADD_TODO,
-        text: 'Run the tests'
+        type: types.PRODUCTS_LOAD_SUCCESS,
+        products: [
+                 {"id":1,"price":"$87.68","product_name":"Amitriptyline Hydrochloride"},
+                 {"id":2,"price":"$88.68","product_name":"Amitriptyline Hydrochloride"}
+        ]
       })
     ).toEqual([
-      {
-        text: 'Run the tests',
-        completed: false,
-        id: 0
-      }
+      {"id":1,"price":"$87.68","product_name":"Amitriptyline Hydrochloride"},
+      {"id":2,"price":"$88.68","product_name":"Amitriptyline Hydrochloride"}
     ])
-
-    expect(
-      reducer(
-        [
-          {
-            text: 'Use Redux',
-            completed: false,
-            id: 0
-          }
-        ],
-        {
-          type: types.ADD_TODO,
-          text: 'Run the tests'
-        }
-      )
-    ).toEqual([
-        text: 'Run the tests',
-        completed: false,
-        id: 1
-      },
-      {
-        text: 'Use Redux',
-        completed: false,
-        id: 0
-      }
-    ])
+    
   })
 })
