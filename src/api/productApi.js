@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch';
+
 const producturl = 'https://whitechdevs.github.io/reactjs-test/products.json'
 
 class ProductApi {

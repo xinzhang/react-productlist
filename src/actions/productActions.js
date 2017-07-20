@@ -2,7 +2,7 @@ import * as types from './actionTypes';
 import productApi from '../api/productApi';
 
 export function loadProducts() {
-  console.log('load products');
+
   return function(dispatch) {
     dispatch(loadProductsRequest());
     return productApi.getAllProducts().then(data => {
