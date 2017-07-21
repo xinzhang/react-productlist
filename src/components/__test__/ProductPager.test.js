@@ -17,5 +17,20 @@ describe("the product pager component", function() {
     expect(component.find('.grayout').text()).toEqual(' Previous Page');
   })
 
+  it("the component triggered pagechange event", function() {
+    const value = '20'
+    const mockPagination = jest.fn();
+
+    const component = shallow(
+      <ProductPager
+        currentPage={1}
+        totalPage={10}
+        pageNavigation={mockPagination} />
+    )
+
+    component.find('#nextPage').simulate('click');
+    expect(mockPagination).toBeCalledWith(2);
+
+  })
 
 })

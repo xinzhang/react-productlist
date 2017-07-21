@@ -14,12 +14,18 @@ describe("the items per page component", function() {
     expect(a).toEqual('select');
   })
 
-  describe("the component triggered dropdownlist change", function() {
+  it("the component triggered dropdownlist change", function() {
+    const value = '20'
+    const testUpdateItems = jest.fn();
 
     var itemsPerPage = shallow(
-      <ItemsPerPage  />
+      <ItemsPerPage updateItemsPerPage={testUpdateItems}  />
     )
-    const a = itemsPerPage.name();
-    expect(a).toEqual('select');
+
+    itemsPerPage.find('select').simulate('change', { target: value});
+
+    expect(testUpdateItems).toBeCalledWith({target:value});
+
   })
+
 })

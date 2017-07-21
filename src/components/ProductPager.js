@@ -35,7 +35,7 @@ export default class RequestTablePager extends React.Component {
             <span className="grayout"><i className="fa fa-chevron-right fa-fw"></i> Next Page</span>
           }
           {this.props.currentPage < this.props.totalPage &&
-          <a onClick={()=>this.props.pageNavigation(this.props.currentPage+1)}>
+          <a onClick={()=>this.props.pageNavigation(this.props.currentPage+1)} id="nextPage">
               <i className="fa fa-chevron-right fa-fw"></i> Next Page
           </a>}
       </div>
