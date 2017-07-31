@@ -24,7 +24,6 @@ describe('load products', () => {
     //       ]
     //     }
     //   })
-
     const expectedActions = [
       { type: types.PRODUCTS_LOAD_REQUEST },
       {
@@ -37,6 +36,8 @@ describe('load products', () => {
       }
     ]
 
+    //window.fetch = jest.func().mockImplementation( () => Promise.resolve({ok:true, expectedActions[1].body}));
+
     const store = mockStore({ products: [] })
 
     return store.dispatch(actions.loadProducts()).then(() => {
@@ -45,7 +46,7 @@ describe('load products', () => {
 
       expect(actions[0]).toEqual(expectedActions[0]);
       expect(actions[1].type).toEqual(expectedActions[1].type);
-      expect(actions[1].products.length).toEqual(1000);      
+      expect(actions[1].products.length).toEqual(1000);
     })
   })
 })
