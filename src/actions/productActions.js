@@ -1,16 +1,20 @@
 import * as types from './actionTypes';
-import productApi from '../api/productApi';
+//import productApi from '../api/productApi';
+
+import {getAllProducts} from '../api/productApi';
 
 export function loadProducts() {
 
   return function(dispatch) {
     dispatch(loadProductsRequest());
-    return productApi.getAllProducts().then(data => {
+
+    return getAllProducts().then(data => {
       dispatch(loadProductsSuccess(data));
     }).catch(error => {
       dispatch(loadProductsFailure(error));
       throw(error);
     });
+
   }
 }
 

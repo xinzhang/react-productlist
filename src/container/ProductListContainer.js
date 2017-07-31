@@ -5,10 +5,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/productActions';
 
-import ProductList from './ProductList';
-import ProductPager from './ProductPager';
-import TotalProducts from './TotalProducts';
-import ItemsPerPage from './ItemsPerPage';
+import ProductList from '../components/ProductList';
+import ProductPager from '../components/ProductPager';
+import TotalProducts from '../components/TotalProducts';
+import ItemsPerPage from '../components/ItemsPerPage';
 
 class ProductListContainer extends React.Component {
 
